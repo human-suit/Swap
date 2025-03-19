@@ -1,0 +1,29 @@
+prettier
+
+npm install -g sass
+
+терминал -> configure tasks -> create tasks.json file from template -> others
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Comple SCSS to Css",
+            "type": "shell",
+            "command": "sass styles.scss styles.css",
+            "group": "build"
+        }
+    ]
+}
+
+создаем файл scss после пишем код для преобразования в css ctrl shift b 
+
+prepros для автоматического компиляции scss в css
+
+rem -- чтобы перевести rem в пиксели надо поделить на 16 пиксели
+em -- если число выглядет не очень то надо поделить на 24 пикселя и получим em 
+
+1 - rem -- 16px
+1.5 rem -- 24px
+1.875 rem -- 30px 
+2 - rem -- 32px
