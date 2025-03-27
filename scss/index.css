@@ -38,18 +38,22 @@ ul {
   background-image: linear-gradient(0.25turn, #F8F8F8, #FFFFFF);
 }
 .header__text{
-  font-size: 24px;
+  text-transform: uppercase;
+  font-size: 18px;
+  word-spacing:-1px; 
   color: #7e7e82;
   font-weight: 100;
   min-width: 288px;
-  max-width: 328px;
+  max-width: 310px;
   padding: 10px;
   text-align: justify;
 }
+.swiper{
+  max-width: 680px;
+  margin-top: 20px;
+}
 .swiper-container {
   position: relative;
-  max-width: 428px;
-  height: 200px;
   margin-top: -50px;
 }
 .swiper-pagination-bullet {
@@ -58,18 +62,27 @@ ul {
   background: #dddddd;
   opacity: 1;
 }
-.swiper-slide > .swipe_img {
-  margin-top: 13%;
+.swiper-slide{
+  margin-top: 40px;
+  padding:30px 0px 50px 5px;
+  display: block;
+}
+.swipe_img {
+  height: fit-content;
+  margin-top: 5px;
+}
+.swiper-card{
+  display: flex;
+  justify-content: space-between;
   background-color: white;
-  padding: 30px 200px 30px 20px;
+  width: 320px;
+  height: 75px;
+  padding: 30px 20px 0px 15px;
   border-radius: 15px;
   border: 1px solid #eaeaea;
 }
 .swiper-pagination-bullet-active {
   background: #b5b6bc;
-}
-.swiper-wrapper {
-  margin: 0 auto;
 }
 .swiper-button-next {
   position: absolute;
@@ -107,6 +120,7 @@ ul {
   height: fit-content;
 }
 .hiden__list_item__button {
+  transition: 1s;
   border: 2px solid #ff3e79;
   border-radius: 50%;
   padding: 16px 18px;
@@ -117,9 +131,11 @@ ul {
   color: #ff3e79;;
   font-size: 24px;
 }
-.margin{
-  margin: 80px 100px 0px -100px;
-  position: absolute;
+.swiper-slide-next{
+  margin-left: -50px;
+}
+.top{
+  margin-top: -5px;
 }
 #myButton{
   padding-left: 20px;
@@ -133,29 +149,37 @@ ul {
   padding: 10px;
 }
 .hover:hover{
+  transition: 1s;
   cursor: pointer;
+  margin-top: -15px;
 }
 .hid {
   display: none;
 }
 .hiden__list__button {
-  display: flex;
+  transition: 0.5s;
+  display: none;
   align-items: center;
   background-color: transparent;
   border: 0px;
+  margin-top: 30px;
+}
+.hiden__list__button:hover{
+  transition: 0.5s;
+  margin-right: -5px;
 }
 .hiden__list__button > .margin {
   margin-right: 10px;
 }
-@media (width > 768px) {
+@media (width > 669px) {
   #wrapper {
     min-width: 768px;
     max-width: 1100px;
     overflow: hidden;
     margin: 0 auto;
   }
-  .swiper-container {
-    display: none;
+  .swiper{
+    margin: 10px 0px 20px 40px;
   }
   .hiden {
     display: block;
@@ -164,13 +188,40 @@ ul {
   .header__text{
     min-width: 768px;
     max-width: 1100px;
-    margin-left: 100px;
+    margin-left: 45px;
+  }
+  .hiden__list__button{
+    margin-left: 45px;
+    display: flex;
   }
   button:hover {
     cursor: pointer;
   }
+  .swiper-pagination{
+    display: none;
+  }
+  .swiper-slide-next{
+    margin-left: 0px;
+  }
+  .swiper{
+    max-width: 800px;
+  }
+  .swiper-card{
+    min-width: 180px;
+    max-width: 220px;
+  }
+  .swiper-slide{
+    padding-bottom: 0px;
+    padding-top: 10px;
+  }
+  .swiper-grid>.swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 320px);
+    gap: 0px;
+  }
+  
 }
-@media (width > 1120px) {
+@media (width > 900px) {
   #wrapper {
     min-width: 1120px;
     max-width: 1920px;
@@ -183,5 +234,26 @@ ul {
   .header__text{
     min-width: 1120px;
     max-width: 1920px;
+  }
+  .swiper-card{
+    min-width: 220px;
+    max-width: 120px;
+  }
+  .swiper-grid>.swiper-wrapper {
+    grid-template-columns: repeat(3, 320px);
+    gap: 0px;
+  }
+  .swiper{
+    margin-left: 40px;
+    max-width: 1280px;
+  }
+}
+@media (width > 1280px) {
+  .swiper{
+    margin: 0 auto;
+  }
+  .swiper-grid>.swiper-wrapper {
+    grid-template-columns: repeat(4, 320px);
+    gap: 0px;
   }
 }

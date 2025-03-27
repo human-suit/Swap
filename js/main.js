@@ -1,25 +1,53 @@
 // console.log("1");
-const swiper = new Swiper(".swiper-container", {
-  // Optional parameters
+const pageWidth = document.documentElement.scrollWidth
+
+const setting = {
   direction: "horizontal",
   loop: true,
-
-  // If we need pagination
   pagination: {
     el: ".swiper-pagination",
   },
-
-  // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
-    // prevEl: ".swiper-button-prev",
   },
-
-  // And if we need scrollbar
   scrollbar: {
     el: ".swiper-scrollbar",
   },
-});
+  breakpoints: {
+    676: {
+        loop: false,
+        slidesPerView: 3,
+        spaceBetween: 20,
+        grid: {
+            rows: 2,
+            fill: 'row',
+        },
+    },
+    900:{
+        loop: false,
+        slidesPerView: 4,
+        spaceBetween: 40,
+        grid: {
+            rows: 3,
+            fill: 'row',
+        },
+    }
+  }
+}
+
+if( pageWidth > 686 ) {
+  const elements = document.querySelectorAll('.swiper-slide')
+  console.log(elements)
+  for (let index = elements.length-1; index > 5; index--) {
+    const element = elements[index]
+    element.classList.add('hid')  
+  }
+} 
+
+const swiper = new Swiper(".swiper-container", setting);
+
+
+
 
 
 
